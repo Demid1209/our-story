@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-```
 // Анимация появления секций
 const revealElements = document.querySelectorAll(
     '.section, .project-card, .skill-card, .stat-card, .glass-card'
@@ -152,5 +151,12 @@ document.addEventListener('mousemove', (e) => {
 }
 });
 ```
+if(glow2){
+    glow2.style.transform =
+        `translate(${-x * 20}px, ${-y * 20}px)`;
+}
 
+});
+
+});
 });
