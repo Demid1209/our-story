@@ -149,7 +149,24 @@ document.addEventListener('mousemove', (e) => {
         glow2.style.transform =
             `translate(${-x * 20}px, ${-y * 20}px)`;
     }
+.active-link{
+    color:white !important;
+    position:relative;
+}
 
+.active-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+    );
+}
 });
 ```
 
