@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================
-    // REVEAL ANIMATION (FIX)
-    // =========================
-
-    const revealElements = document.querySelectorAll(
-        '.section, .project-card, .skill-card, .stat-card, .glass-card'
-    );
+    const revealElements = document.querySelectorAll('.reveal');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -15,30 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.15
     });
 
     revealElements.forEach(el => observer.observe(el));
 
 
-    // =========================
-    // COUNTERS (SAFE)
-    // =========================
-
-    const counters = document.querySelectorAll('.counter');
-
-    counters.forEach(counter => {
+    // COUNTERS
+    document.querySelectorAll('.counter').forEach(counter => {
 
         const target = parseInt(counter.dataset.target || "0", 10);
-
         if (!target) return;
 
         let current = 0;
         const step = Math.ceil(target / 60);
 
         const update = () => {
-
             current += step;
 
             if (current >= target) {
@@ -47,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             counter.innerText = current;
-
             requestAnimationFrame(update);
         };
 
@@ -55,48 +40,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // =========================
-    // LANGUAGE SWITCH (SAFE)
-    // =========================
-
+    // LANGUAGE SWITCH SAFE
     const langToggle = document.getElementById('langToggle');
 
     if (langToggle) {
-
-        let currentLang = 'en';
+        let lang = 'en';
 
         langToggle.addEventListener('click', () => {
 
-            const about = document.querySelector('a[href="#about"]');
-            const focus = document.querySelector('a[href="#focus"]');
-            const projects = document.querySelector('a[href="#projects"]');
-            const timeline = document.querySelector('a[href="#timeline"]');
-            const contact = document.querySelector('a[href="#contact"]');
+            document.querySelectorAll('nav a').forEach(a => {
 
-            if (currentLang === 'en') {
+                if (lang === 'en') {
+                    a.textContent = {
+                        '#about': 'Обо мне',
+                        '#focus': 'Фокус',
+                        '#projects': 'Проекты',
+                        '#timeline': 'Карьера',
+                        '#contact': 'Контакты'
+                    }[a.getAttribute('href')] || a.textContent;
+                } else {
+                    a.textContent = {
+                        '#about': 'About',
+                        '#focus': 'Focus',
+                        '#projects': 'Projects',
+                        '#timeline': 'Career',
+                        '#contact': 'Contact'
+                    }[a.getAttribute('href')] || a.textContent;
+                }
+            });
 
-                about && (about.textContent = 'Обо мне');
-                focus && (focus.textContent = 'Фокус');
-                projects && (projects.textContent = 'Проекты');
-                timeline && (timeline.textContent = 'Карьера');
-                contact && (contact.textContent = 'Контакты');
-
-                langToggle.textContent = 'EN';
-
-                currentLang = 'ru';
-
-            } else {
-
-                about && (about.textContent = 'About');
-                focus && (focus.textContent = 'Focus');
-                projects && (projects.textContent = 'Projects');
-                timeline && (timeline.textContent = 'Career');
-                contact && (contact.textContent = 'Contact');
-
-                langToggle.textContent = 'RU';
-
-                currentLang = 'en';
-            }
+            lang = lang === 'en' ? 'ru' : 'en';
         });
     }
 
