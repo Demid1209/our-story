@@ -1,8 +1,11 @@
+/* =========================
+   BASE
+========================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter,sans-serif;
+font-family:Inter, sans-serif;
 }
 
 body{
@@ -12,173 +15,282 @@ overflow-x:hidden;
 cursor:none;
 }
 
-/* NOISE */
-.noise{
-position:fixed;
-inset:0;
-background-image:url("https://www.transparenttextures.com/patterns/noise.png");
-opacity:.05;
-pointer-events:none;
-}
-
-/* BACKGROUND GLOW */
+/* =========================
+   BACKGROUND
+========================= */
 .bg{
 position:fixed;
 inset:0;
 background:
 radial-gradient(circle at 20% 20%, rgba(124,92,255,.25), transparent 40%),
-radial-gradient(circle at 80% 30%, rgba(0,212,255,.15), transparent 40%);
-z-index:-1;
+radial-gradient(circle at 80% 30%, rgba(0,212,255,.12), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(124,92,255,.10), transparent 45%);
+z-index:-2;
 }
 
-/* CURSOR */
+/* subtle noise overlay */
+.bg::after{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("https://www.transparenttextures.com/patterns/noise.png");
+opacity:.05;
+}
+
+/* =========================
+   CURSOR (SMOOTH FOLLOW)
+========================= */
 .cursor{
-width:22px;
-height:22px;
+width:14px;
+height:14px;
 border:1px solid rgba(255,255,255,.5);
 border-radius:50%;
 position:fixed;
 transform:translate(-50%,-50%);
 pointer-events:none;
-transition:.08s linear;
 z-index:999;
-mix-blend-mode: difference;
+transition:transform .08s linear;
 }
 
-/* PROGRESS */
-.progress{
-position:fixed;
-top:0;
-left:0;
-height:3px;
-width:0%;
-background:linear-gradient(90deg,#7c5cff,#00d4ff);
-z-index:999;
-}
-
-/* HEADER */
-.header{
+/* =========================
+   HEADER
+========================= */
+header{
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 60px;
-backdrop-filter:blur(25px);
+backdrop-filter:blur(22px);
 background:rgba(10,12,20,.55);
-z-index:100;
 border-bottom:1px solid rgba(255,255,255,.05);
+z-index:100;
+}
+
+header b{
+font-size:18px;
+letter-spacing:2px;
 }
 
 nav a{
-color:#aaa;
-margin-left:25px;
+color:#aab;
+margin-left:22px;
 text-decoration:none;
-transition:.3s;
+font-size:14px;
+transition:.25s;
+position:relative;
 }
 
 nav a:hover{
 color:white;
 }
 
-/* HERO */
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:1px;
+background:linear-gradient(90deg,#7c5cff,#00d4ff);
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:0 20px;
 }
 
 .hero h1{
-font-size:78px;
-letter-spacing:-2px;
+font-size:72px;
+letter-spacing:-1px;
+background:linear-gradient(90deg,#fff,#aab);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-color:#aaa;
-margin-top:10px;
+margin-top:12px;
+color:#aab;
+max-width:700px;
+line-height:1.6;
 }
 
-/* BUTTONS */
-.hero-cta{
-margin-top:30px;
-display:flex;
-gap:15px;
-justify-content:center;
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+margin-bottom:22px;
+object-fit:cover;
+box-shadow:
+0 0 40px rgba(124,92,255,.25),
+0 0 80px rgba(0,212,255,.12);
 }
 
+/* =========================
+   BUTTONS
+========================= */
 .btn{
-padding:14px 22px;
+display:inline-block;
+margin-top:22px;
+padding:12px 22px;
 border-radius:12px;
-border:1px solid rgba(255,255,255,.1);
 background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.12);
 color:white;
-cursor:pointer;
-transition:.3s;
+text-decoration:none;
+transition:.25s;
+font-size:14px;
 }
 
 .btn:hover{
-transform:translateY(-5px);
-border-color:rgba(124,92,255,.5);
+transform:translateY(-6px);
+border-color:#7c5cff;
+background:rgba(124,92,255,.08);
 }
 
 .ghost{
 background:transparent;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 .section{
-padding:140px 10%;
+padding:120px 10%;
 }
 
 .section h2{
-font-size:42px;
+font-size:44px;
 margin-bottom:25px;
+letter-spacing:-0.5px;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:22px;
-}
-
-/* CARDS */
-.card{
-padding:28px;
+/* =========================
+   GLASS
+========================= */
+.glass{
+padding:26px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
 border-radius:18px;
+backdrop-filter:blur(18px);
+color:#cfd6ff;
+line-height:1.7;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+padding:26px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+transition:.35s ease;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+inset:-2px;
+background:linear-gradient(90deg,transparent,#7c5cff,transparent);
+opacity:0;
 transition:.4s;
-transform-style:preserve-3d;
 }
 
 .card:hover{
-transform:translateY(-10px) rotateX(6deg);
+transform:translateY(-10px);
 border-color:rgba(124,92,255,.4);
-box-shadow:0 0 40px rgba(124,92,255,.12);
 }
 
-.glow{
-box-shadow:0 0 60px rgba(124,92,255,.15);
+.card:hover::before{
+opacity:.2;
 }
 
-/* REVEAL */
+/* =========================
+   TIMELINE
+========================= */
+.timeline div{
+margin-bottom:12px;
+color:#aab;
+font-size:15px;
+}
+
+.timeline span{
+color:#7c5cff;
+margin-right:10px;
+font-weight:600;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
 .reveal{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(50px);
+filter:blur(10px);
 transition:all .9s cubic-bezier(.2,.8,.2,1);
 }
 
 .reveal.active{
 opacity:1;
 transform:translateY(0);
+filter:blur(0);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
 text-align:center;
 padding:60px;
 color:#666;
+font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+.hero h1{
+font-size:44px;
+}
+
+.section{
+padding:80px 6%;
+}
+
+nav{
+display:none;
+}
+
+.cursor{
+display:none;
+}
 }
