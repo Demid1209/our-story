@@ -1,47 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// Анимация появления секций
-const revealElements = document.querySelectorAll(
-    '.section, .project-card, .skill-card, .stat-card, .glass-card'
-);
+    // Reveal animation
+    const revealElements = document.querySelectorAll(
+        '.section, .project-card, .skill-card, .stat-card, .glass-card'
+    );
 
-revealElements.forEach(el => {
-    el.classList.add('reveal');
-});
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-            entry.target.classList.add('active');
-        }
-
+    revealElements.forEach(el => {
+        el.classList.add('reveal');
     });
-},{
-    threshold:0.15
-});
 
-revealElements.forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
 
-// Анимированные счетчики
-const counters = document.querySelectorAll('.counter');
+    revealElements.forEach(el => observer.observe(el));
 
-const counterObserver = new IntersectionObserver((entries)=>{
+    // Counters
+    const counters = document.querySelectorAll('.counter');
 
-    entries.forEach(entry=>{
+    counters.forEach(counter => {
 
-        if(!entry.isIntersecting) return;
-
-        const counter = entry.target;
-        const target = +counter.dataset.target;
-
+        const target = Number(counter.dataset.target);
         let current = 0;
 
-        const increment = Math.max(1, Math.ceil(target / 60));
+        const update = () => {
 
-        const updateCounter = () => {
-
-            current += increment;
+            current += Math.ceil(target / 60);
 
             if(current >= target){
                 counter.innerText = target;
@@ -50,151 +40,49 @@ const counterObserver = new IntersectionObserver((entries)=>{
 
             counter.innerText = current;
 
-            requestAnimationFrame(updateCounter);
+            requestAnimationFrame(update);
         };
 
-        updateCounter();
-
-        counterObserver.unobserve(counter);
+        update();
 
     });
 
-}, {
-    threshold:0.5
-});
+    // Language Switch
+    const langToggle = document.getElementById('langToggle');
 
-counters.forEach(counter => {
-    counterObserver.observe(counter);
-});
+    if(langToggle){
 
-// Активный пункт меню
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a');
+        let currentLang = 'en';
 
-window.addEventListener('scroll', () => {
+        langToggle.addEventListener('click', () => {
 
-    let currentSection = '';
+            if(currentLang === 'en'){
 
-    sections.forEach(section => {
+                document.querySelector('a[href="#about"]').textContent = 'Обо мне';
+                document.querySelector('a[href="#focus"]').textContent = 'Фокус';
+                document.querySelector('a[href="#projects"]').textContent = 'Проекты';
+                document.querySelector('a[href="#timeline"]').textContent = 'Карьера';
+                document.querySelector('a[href="#contact"]').textContent = 'Контакты';
 
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.clientHeight;
+                langToggle.textContent = 'EN';
 
-        if(window.scrollY >= sectionTop &&
-           window.scrollY < sectionTop + sectionHeight){
+                currentLang = 'ru';
 
-            currentSection = section.getAttribute('id');
-        }
+            } else {
 
-    });
+                document.querySelector('a[href="#about"]').textContent = 'About';
+                document.querySelector('a[href="#focus"]').textContent = 'Focus';
+                document.querySelector('a[href="#projects"]').textContent = 'Projects';
+                document.querySelector('a[href="#timeline"]').textContent = 'Career';
+                document.querySelector('a[href="#contact"]').textContent = 'Contact';
 
-    navLinks.forEach(link => {
+                langToggle.textContent = 'RU';
 
-        link.classList.remove('active-link');
+                currentLang = 'en';
+            }
 
-        if(link.getAttribute('href') === '#' + currentSection){
-            link.classList.add('active-link');
-        }
+        });
 
-    });
-
-});
-
-// Плавный эффект появления Hero
-const heroAvatar = document.querySelector('.hero-avatar');
-const heroContent = document.querySelector('.hero-content');
-
-if(heroAvatar){
-    heroAvatar.animate(
-        [
-            { opacity:0, transform:'translateY(40px)' },
-            { opacity:1, transform:'translateY(0)' }
-        ],
-        {
-            duration:1000,
-            fill:'forwards'
-        }
-    );
-}
-
-if(heroContent){
-    heroContent.animate(
-        [
-            { opacity:0, transform:'translateY(40px)' },
-            { opacity:1, transform:'translateY(0)' }
-        ],
-        {
-            duration:1200,
-            fill:'forwards'
-        }
-    );
-}
-
-// Параллакс для свечения
-document.addEventListener('mousemove', (e) => {
-
-    const glow1 = document.querySelector('.glow-1');
-    const glow2 = document.querySelector('.glow-2');
-
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    if(glow1){
-        glow1.style.transform =
-            `translate(${x * 20}px, ${y * 20}px)`;
     }
 
-    if(glow2){
-        glow2.style.transform =
-            `translate(${-x * 20}px, ${-y * 20}px)`;
-    }
-}
-});
-```
-if(glow2){
-    glow2.style.transform =
-        `translate(${-x * 20}px, ${-y * 20}px)`;
-}
-// Language Switch
-
-const langToggle = document.getElementById('langToggle');
-
-if(langToggle){
-
-    let currentLang = 'en';
-
-    langToggle.addEventListener('click', () => {
-
-        if(currentLang === 'en'){
-
-            document.querySelector('a[href="#about"]').textContent = 'Обо мне';
-            document.querySelector('a[href="#focus"]').textContent = 'Фокус';
-            document.querySelector('a[href="#projects"]').textContent = 'Проекты';
-            document.querySelector('a[href="#timeline"]').textContent = 'Карьера';
-            document.querySelector('a[href="#contact"]').textContent = 'Контакты';
-
-            langToggle.textContent = 'EN';
-
-            currentLang = 'ru';
-
-        } else {
-
-            document.querySelector('a[href="#about"]').textContent = 'About';
-            document.querySelector('a[href="#focus"]').textContent = 'Focus';
-            document.querySelector('a[href="#projects"]').textContent = 'Projects';
-            document.querySelector('a[href="#timeline"]').textContent = 'Career';
-            document.querySelector('a[href="#contact"]').textContent = 'Contact';
-
-            langToggle.textContent = 'RU';
-
-            currentLang = 'en';
-
-        }
-
-    });
-
-}
-});
-
-});
 });
