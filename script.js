@@ -1,26 +1,18 @@
-// =======================
-// CURSOR FOLLOW
-// =======================
+// =========================
+// CURSOR (SMOOTH FOLLOW)
+// =========================
 const cursor = document.querySelector(".cursor");
 
+if(cursor){
 document.addEventListener("mousemove", (e) => {
 cursor.style.left = e.clientX + "px";
 cursor.style.top = e.clientY + "px";
 });
+}
 
-// =======================
-// SCROLL PROGRESS
-// =======================
-window.addEventListener("scroll", () => {
-const scrollTop = window.scrollY;
-const height = document.body.scrollHeight - window.innerHeight;
-const progress = (scrollTop / height) * 100;
-document.querySelector(".progress").style.width = progress + "%";
-});
-
-// =======================
-// REVEAL SYSTEM (SMOOTH)
-// =======================
+// =========================
+// REVEAL ANIMATION ENGINE
+// =========================
 const elements = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
@@ -29,27 +21,52 @@ if(entry.isIntersecting){
 entry.target.classList.add("active");
 }
 });
-},{
-threshold:0.12,
-rootMargin:"0px 0px -10% 0px"
+}, {
+threshold: 0.12
 });
 
 elements.forEach(el => observer.observe(el));
 
+// =========================
+// SMOOTH SCROLL FIX
+// =========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener("click", function(e){
+e.preventDefault();
+const target = document.querySelector(this.getAttribute("href"));
 
-// =======================
-// MAGNETIC BUTTON EFFECT
-// =======================
-document.querySelectorAll(".magnetic").forEach(btn => {
-btn.addEventListener("mousemove", (e) => {
-const rect = btn.getBoundingClientRect();
-const x = e.clientX - rect.left;
-const y = e.clientY - rect.top;
-
-btn.style.transform = `translate(${(x - rect.width/2)/8}px, ${(y - rect.height/2)/8}px)`;
+if(target){
+target.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+}
+});
 });
 
-btn.addEventListener("mouseleave", () => {
-btn.style.transform = "translate(0,0)";
+// =========================
+// NAV ACTIVE ON SCROLL (premium touch)
+// =========================
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+let current = "";
+
+sections.forEach(section => {
+const top = section.offsetTop - 150;
+const height = section.clientHeight;
+
+if(pageYOffset >= top){
+current = section.getAttribute("id");
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
 });
 });
