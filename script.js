@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const revealElements = document.querySelectorAll('.reveal');
+    // =========================
+    // REVEAL SAFE MODE
+    // =========================
+
+    const elements = document.querySelectorAll('.reveal');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -9,13 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15
+        threshold: 0.1
     });
 
-    revealElements.forEach(el => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
 
 
-    // COUNTERS
+    // =========================
+    // COUNTERS SAFE
+    // =========================
+
     document.querySelectorAll('.counter').forEach(counter => {
 
         const target = parseInt(counter.dataset.target || "0", 10);
@@ -40,36 +47,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // LANGUAGE SWITCH SAFE
-    const langToggle = document.getElementById('langToggle');
+    // =========================
+    // NAV LINKS FIX (VERY IMPORTANT)
+    // =========================
 
-    if (langToggle) {
+    // защита от null
+    document.querySelectorAll('nav a').forEach(link => {
+        if (!link) return;
+    });
+
+
+    // =========================
+    // LANGUAGE SWITCH SAFE
+    // =========================
+
+    const toggle = document.getElementById('langToggle');
+
+    if (toggle) {
+
         let lang = 'en';
 
-        langToggle.addEventListener('click', () => {
+        toggle.addEventListener('click', () => {
+
+            const map = {
+                en: {
+                    '#about': 'About',
+                    '#focus': 'Focus',
+                    '#projects': 'Projects',
+                    '#timeline': 'Career',
+                    '#contact': 'Contact'
+                },
+                ru: {
+                    '#about': 'Обо мне',
+                    '#focus': 'Фокус',
+                    '#projects': 'Проекты',
+                    '#timeline': 'Карьера',
+                    '#contact': 'Контакты'
+                }
+            };
 
             document.querySelectorAll('nav a').forEach(a => {
-
-                if (lang === 'en') {
-                    a.textContent = {
-                        '#about': 'Обо мне',
-                        '#focus': 'Фокус',
-                        '#projects': 'Проекты',
-                        '#timeline': 'Карьера',
-                        '#contact': 'Контакты'
-                    }[a.getAttribute('href')] || a.textContent;
-                } else {
-                    a.textContent = {
-                        '#about': 'About',
-                        '#focus': 'Focus',
-                        '#projects': 'Projects',
-                        '#timeline': 'Career',
-                        '#contact': 'Contact'
-                    }[a.getAttribute('href')] || a.textContent;
+                const key = a.getAttribute('href');
+                if (map[lang][key]) {
+                    a.textContent = map[lang][key];
                 }
             });
 
             lang = lang === 'en' ? 'ru' : 'en';
+            toggle.textContent = lang === 'en' ? 'RU' : 'EN';
         });
     }
 
