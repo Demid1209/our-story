@@ -1,90 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Demid Kuzmin | Product Lead</title>
+<title>Demid Kuzmin | Senior Product Lead</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<style>
+/* =========================
+   BASE
+========================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter, sans-serif;
+}
+
+body{
+background:#070A12;
+color:white;
+overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+.bg{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, rgba(124,92,255,.25), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(0,212,255,.15), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(124,92,255,.12), transparent 40%);
+z-index:-1;
+}
+
+/* =========================
+   CURSOR
+========================= */
+.cursor{
+width:16px;
+height:16px;
+border:1px solid rgba(255,255,255,.6);
+border-radius:50%;
+position:fixed;
+transform:translate(-50%,-50%);
+pointer-events:none;
+z-index:999;
+}
+
+/* =========================
+   HEADER
+========================= */
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+backdrop-filter:blur(20px);
+background:rgba(10,12,20,.6);
+z-index:10;
+}
+
+nav a{
+color:#aaa;
+margin-left:20px;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+}
+
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+margin-bottom:20px;
+object-fit:cover;
+box-shadow:0 0 40px rgba(124,92,255,.3);
+}
+
+h1{
+font-size:64px;
+}
+
+p{
+color:#aaa;
+max-width:700px;
+margin-top:10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn{
+margin-top:20px;
+padding:12px 20px;
+border-radius:12px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+color:white;
+text-decoration:none;
+transition:.3s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+border-color:#7c5cff;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section{
+padding:120px 10%;
+}
+
+h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+.glass{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+backdrop-filter:blur(10px);
+}
+
+/* =========================
+   GRID
+========================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#7c5cff;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline div{
+margin-bottom:10px;
+color:#aaa;
+}
+
+.timeline span{
+color:#7c5cff;
+margin-right:10px;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+text-align:center;
+padding:60px;
+color:#666;
+}
+</style>
 </head>
 
 <body>
 
-<div class="cursor"></div>
-<div class="progress"></div>
-<div class="noise"></div>
 <div class="bg"></div>
+<div class="cursor"></div>
 
-<header class="header">
-    <div class="logo">DK</div>
+<header>
+    <div><b>DK</b></div>
+
     <nav>
         <a href="#about">About</a>
-        <a href="#focus">Focus</a>
-        <a href="#projects">Work</a>
+        <a href="#products">Products</a>
+        <a href="#cases">Cases</a>
+        <a href="#timeline">Journey</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero reveal">
-    <div class="hero-inner">
-        <h1>Demid Kuzmin</h1>
-        <p>Senior Product Lead — Digital Banking & Fintech Products</p>
 
-        <div class="hero-cta">
-            <button class="btn magnetic">View Work</button>
-            <button class="btn ghost magnetic">Contact</button>
-        </div>
-    </div>
+    <img src="photo.jpg" class="avatar" />
+
+    <h1>Demid Kuzmin</h1>
+
+    <p>
+        Senior Product Lead — Digital Banking, Payments & Fintech Products.
+    </p>
+
+    <a href="cv.pdf" class="btn">Download CV</a>
+
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section reveal">
+
     <h2>About</h2>
-    <p>
-        Building scalable fintech ecosystems, digital banking platforms and payment infrastructure with measurable business impact.
-    </p>
-</section>
 
-<!-- FOCUS -->
-<section id="focus" class="section reveal">
-    <h2>Focus</h2>
-
-    <div class="grid">
-        <div class="card tilt">Discovery</div>
-        <div class="card tilt">Product Strategy</div>
-        <div class="card tilt">Payments</div>
-        <div class="card tilt">Growth</div>
+    <div class="glass">
+        Senior Product Lead with 5+ years of experience in digital banking,
+        fintech ecosystems, lending platforms and payment systems.
     </div>
+
 </section>
 
-<!-- WORK -->
-<section id="projects" class="section reveal">
-    <h2>Selected Work</h2>
+<!-- PRODUCTS -->
+<section id="products" class="section reveal">
+
+    <h2>Products</h2>
 
     <div class="grid">
-        <div class="card tilt glow">
+
+        <div class="card">
             <h3>Davr Business 2.0</h3>
-            <p>Full-scale digital banking platform</p>
+            <p>Digital banking platform for SMEs</p>
         </div>
 
-        <div class="card tilt glow">
+        <div class="card">
             <h3>Tenge Business</h3>
-            <p>SME onboarding & lending ecosystem</p>
+            <p>Online onboarding & lending system</p>
         </div>
+
+        <div class="card">
+            <h3>Payment Gateway</h3>
+            <p>Transfers, payouts, integrations</p>
+        </div>
+
     </div>
+
+</section>
+
+<!-- CASES -->
+<section id="cases" class="section reveal">
+
+    <h2>Case Studies</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Davr Transformation</h3>
+            <p>Full digital banking rebuild for business clients</p>
+        </div>
+
+        <div class="card">
+            <h3>Tenge Ecosystem</h3>
+            <p>SME onboarding + credit pipeline automation</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="section reveal">
+
+    <h2>Career Journey</h2>
+
+    <div class="timeline">
+        <div><span>2021</span> Tenge Business</div>
+        <div><span>2022</span> Uzum Ecosystem</div>
+        <div><span>2023</span> Click Business</div>
+        <div><span>2024</span> Davr Bank</div>
+    </div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section reveal">
+
     <h2>Contact</h2>
-    <p>Telegram: @Demid_1209</p>
+
+    <div class="glass">
+        <p>Email: demid.kuzmin1209@gmail.com</p>
+        <p>Telegram: @Demid_1209</p>
+        <p>LinkedIn: profile</p>
+        <p>CV: available above</p>
+    </div>
+
 </section>
 
-<footer>© 2026 Demid Kuzmin</footer>
+<footer>
+    © 2026 Demid Kuzmin — Senior Product Lead
+</footer>
 
-<script src="script.js"></script>
+<script>
+/* =========================
+   CURSOR
+========================= */
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e=>{
+cursor.style.left = e.clientX + 'px';
+cursor.style.top = e.clientY + 'px';
+});
+
+/* =========================
+   REVEAL
+========================= */
+const items = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add('active');
+}
+});
+},{threshold:0.15});
+
+items.forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
