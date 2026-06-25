@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Один вопрос, который я не успел задать</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+overflow:hidden;
+color:white;
+}
+
+.slide{
+height:100vh;
+width:100%;
+position:absolute;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+background-size:cover;
+background-position:center;
+transition:all .8s ease;
+opacity:0;
+pointer-events:none;
+}
+
+.slide.active{
+opacity:1;
+pointer-events:auto;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.55);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:800px;
+}
+
+h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:black;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+textarea{
+width:100%;
+max-width:600px;
+height:140px;
+padding:15px;
+border-radius:15px;
+border:none;
+resize:none;
+font-size:16px;
+margin-bottom:20px;
+}
+
+.option{
+display:block;
+margin:15px auto;
+padding:15px;
+width:100%;
+max-width:500px;
+background:rgba(255,255,255,.15);
+border-radius:15px;
+cursor:pointer;
+}
+
+input[type=radio]{
+margin-right:10px;
+}
+
+@media(max-width:768px){
+h1{
+font-size:30px;
+}
+p{
+font-size:18px;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="slide active"
+style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85');">
+<div class="overlay"></div>
+<div class="content">
+<h1>Привет.</h1>
+<p>
+Если ты открыла эту страницу, значит мне удалось привлечь твоё внимание хотя бы на пару минут.
+<br><br>
+Обещаю — это последнее, о чём я попрошу.
+</p>
+<button onclick="nextSlide()">Начать</button>
+</div>
+</div>
+
+<div class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858');">
+<div class="overlay"></div>
+<div class="content">
+<h1>Наша мечта</h1>
+<p>
+Мы столько говорили о доме.
+<br>
+О квартире, в которую однажды заедем.
+<br>
+О вечерах после работы.
+<br>
+О том, как будем строить наше будущее.
+<br><br>
+Это была не просто мечта.
+<br>
+Это была наша общая цель.
+</p>
+<button onclick="nextSlide()">Дальше</button>
+</div>
+</div>
+
+<div class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
+<div class="overlay"></div>
+<div class="content">
+<h1>Наши путешествия</h1>
+<p>
+Нячанг.
+<br>
+Самарканд.
+<br>
+Пхукет.
+<br>
+Шарм-эль-Шейх.
+<br><br>
+Когда я вспоминаю нас —
+я вспоминаю не ссоры.
+<br><br>
+Я вспоминаю моменты,
+в которых мы были счастливы.
+</p>
+<button onclick="nextSlide()">Продолжить</button>
+</div>
+</div>
+
+<div class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
+<div class="overlay"></div>
+<div class="content">
+<h1>Самое важное</h1>
+<p>
+Если честно,
+я не могу назвать один самый счастливый день.
+<br><br>
+Потому что счастливых дней было слишком много.
+<br><br>
+Иногда это были путешествия.
+<br>
+Иногда обычный вечер рядом.
+<br>
+Иногда просто ощущение,
+что мы есть друг у друга.
+</p>
+<button onclick="nextSlide()">Ещё один вопрос</button>
+</div>
+</div>
+
+<div class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9');">
+<div class="overlay"></div>
+<div class="content">
+<h1>Разве мы не можем сделать всё наоборот?</h1>
+
+<p>
+Вместо того чтобы закрываться —
+поговорить.
+<br><br>
+Вместо того чтобы уходить —
+услышать друг друга.
+<br><br>
+Вместо того чтобы всё бросить —
+попробовать найти компромисс.
+<br><br>
+Мы близкие друг другу люди.
+<br>
+Разве мы не заслуживаем хотя бы одного честного разговора?
+</p>
+
+<button onclick="nextSlide()">Я дочитала</button>
+
+</div>
+</div>
+
+<div class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330');">
+<div class="overlay"></div>
+<div class="content">
+
+<h1>Мне важно понять</h1>
+
+<label class="option">
+<input type="radio" name="answer">
+Мы действительно сделали всё возможное
+</label>
+
+<label class="option">
+<input type="radio" name="answer">
+Возможно, нам стоило больше говорить
+</label>
+
+<label class="option">
+<input type="radio" name="answer">
+Я пока не знаю
+</label>
+
+<br>
+
+<textarea placeholder="Если захочешь что-то сказать..."></textarea>
+
+<br>
+
+<button onclick="finishStory()">Отправить ответ</button>
+
+</div>
+</div>
+
+<script>
+
+let current=0;
+const slides=document.querySelectorAll('.slide');
+
+function nextSlide(){
+slides[current].classList.remove('active');
+current++;
+slides[current].classList.add('active');
+}
+
+function finishStory(){
+
+document.body.innerHTML=`
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:black;
+color:white;
+padding:30px;
+font-family:Montserrat;
+">
+<div>
+<h1>Спасибо.</h1>
+<p style="margin-top:20px;font-size:22px;">
+Спасибо, что дошла до конца.
+<br><br>
+Я не жду решения прямо сейчас.
+<br><br>
+Мне просто хотелось,
+чтобы ты узнала мои мысли.
+</p>
+</div>
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
