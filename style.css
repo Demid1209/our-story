@@ -612,3 +612,16 @@ git commit -m "premium design update"
 git push
 }
 }
+.lang-btn{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.lang-btn:hover{
+    background:rgba(255,255,255,.15);
+}
