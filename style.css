@@ -39,7 +39,6 @@ radial-gradient(circle at 50% 80%, rgba(124,92,255,.12), transparent 35%);
 pointer-events:none;
 z-index:-2;
 }
-}
 
 .background-glow{
 position:fixed;
@@ -607,11 +606,7 @@ blockquote{
     .case-grid{
         grid-template-columns:1fr;
     }
-git add .
-git commit -m "premium design update"
-git push
-}
-}
+
 .lang-btn{
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.12);
