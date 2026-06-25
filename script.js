@@ -1,101 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
+// =======================
+// CURSOR FOLLOW
+// =======================
+const cursor = document.querySelector(".cursor");
 
-    // =========================
-    // REVEAL SAFE MODE
-    // =========================
+document.addEventListener("mousemove", (e) => {
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
+});
 
-    const elements = document.querySelectorAll('.reveal');
+// =======================
+// SCROLL PROGRESS
+// =======================
+window.addEventListener("scroll", () => {
+const scrollTop = window.scrollY;
+const height = document.body.scrollHeight - window.innerHeight;
+const progress = (scrollTop / height) * 100;
+document.querySelector(".progress").style.width = progress + "%";
+});
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+// =======================
+// REVEAL SYSTEM (SMOOTH)
+// =======================
+const elements = document.querySelectorAll(".reveal");
 
-    elements.forEach(el => observer.observe(el));
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+},{
+threshold:0.12,
+rootMargin:"0px 0px -10% 0px"
+});
 
-
-    // =========================
-    // COUNTERS SAFE
-    // =========================
-
-    document.querySelectorAll('.counter').forEach(counter => {
-
-        const target = parseInt(counter.dataset.target || "0", 10);
-        if (!target) return;
-
-        let current = 0;
-        const step = Math.ceil(target / 60);
-
-        const update = () => {
-            current += step;
-
-            if (current >= target) {
-                counter.innerText = target;
-                return;
-            }
-
-            counter.innerText = current;
-            requestAnimationFrame(update);
-        };
-
-        update();
-    });
+elements.forEach(el => observer.observe(el));
 
 
-    // =========================
-    // NAV LINKS FIX (VERY IMPORTANT)
-    // =========================
+// =======================
+// MAGNETIC BUTTON EFFECT
+// =======================
+document.querySelectorAll(".magnetic").forEach(btn => {
+btn.addEventListener("mousemove", (e) => {
+const rect = btn.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
 
-    // защита от null
-    document.querySelectorAll('nav a').forEach(link => {
-        if (!link) return;
-    });
+btn.style.transform = `translate(${(x - rect.width/2)/8}px, ${(y - rect.height/2)/8}px)`;
+});
 
-
-    // =========================
-    // LANGUAGE SWITCH SAFE
-    // =========================
-
-    const toggle = document.getElementById('langToggle');
-
-    if (toggle) {
-
-        let lang = 'en';
-
-        toggle.addEventListener('click', () => {
-
-            const map = {
-                en: {
-                    '#about': 'About',
-                    '#focus': 'Focus',
-                    '#projects': 'Projects',
-                    '#timeline': 'Career',
-                    '#contact': 'Contact'
-                },
-                ru: {
-                    '#about': 'Обо мне',
-                    '#focus': 'Фокус',
-                    '#projects': 'Проекты',
-                    '#timeline': 'Карьера',
-                    '#contact': 'Контакты'
-                }
-            };
-
-            document.querySelectorAll('nav a').forEach(a => {
-                const key = a.getAttribute('href');
-                if (map[lang][key]) {
-                    a.textContent = map[lang][key];
-                }
-            });
-
-            lang = lang === 'en' ? 'ru' : 'en';
-            toggle.textContent = lang === 'en' ? 'RU' : 'EN';
-        });
-    }
-
+btn.addEventListener("mouseleave", () => {
+btn.style.transform = "translate(0,0)";
+});
 });
