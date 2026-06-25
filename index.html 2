@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demid Kuzmin | Product Owner</title>
+
+```
+<meta name="description" content="Product Owner & Product Manager specializing in Digital Banking, Payments and Fintech Products">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+<div class="background-glow glow-1"></div>
+<div class="background-glow glow-2"></div>
+
+<header class="header">
+    <div class="logo">DK</div>
+
+```
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Projects</a>
+    <a href="#skills">Expertise</a>
+    <a href="#contact">Contact</a>
+</nav>
+```
+
+</header>
+
+<section class="hero">
+
+```
+<div class="hero-avatar">
+    DK
+</div>
+
+<div class="hero-content">
+
+    <span class="hero-tag">
+        PRODUCT OWNER • PRODUCT MANAGER
+    </span>
+
+    <h1>
+        Demid Kuzmin
+    </h1>
+
+    <p>
+        Building digital banking products, payment solutions and business platforms that solve real customer problems.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#contact" class="btn-primary">
+            Contact Me
+        </a>
+
+        <a href="#experience" class="btn-secondary">
+            View Projects
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="about" class="section">
+
+```
+<div class="section-title">
+    About Me
+</div>
+
+<div class="glass-card">
+
+    <p>
+        Product Owner and Product Manager with 5+ years of experience in digital banking,
+        fintech products and payment ecosystems.
+    </p>
+
+    <p>
+        Experienced in mobile banking, business banking, merchant services,
+        payment infrastructure, collections and customer experience.
+    </p>
+
+    <p>
+        Passionate about creating products that deliver measurable business value
+        and exceptional user experience.
+    </p>
+
+</div>
+```
+
+</section>
+
+<section id="current" class="section">
+
+```
+<div class="section-title">
+    Current Focus
+</div>
+
+<div class="glass-card current-focus">
+
+    <h3>Davr Bank</h3>
+
+    <ul>
+
+        <li>Davr Business</li>
+
+        <li>Payment Gateway</li>
+
+        <li>Soft Collection</li>
+
+        <li>Hard Collection</li>
+
+        <li>Digital Banking Products</li>
+
+    </ul>
+
+</div>
+```
+
+</section>
+
+<section id="experience" class="section">
+
+```
+<div class="section-title">
+    Products & Experience
+</div>
+
+<div class="cards-grid">
+
+    <div class="project-card">
+        <h3>Tenge Business</h3>
+        <p>Online Account Opening</p>
+        <p>Business Lending</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Davr Business</h3>
+        <p>Business Banking Platform</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Payment Gateway</h3>
+        <p>Payment Infrastructure</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Collection Systems</h3>
+        <p>Soft Collection</p>
+        <p>Hard Collection</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Uzum Ecosystem</h3>
+        <p>Uzum Bank</p>
+        <p>Uzum Market</p>
+        <p>Uzum Tezkor</p>
+        <p>Uzum Nasiya</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Click Ecosystem</h3>
+        <p>Click</p>
+        <p>Click Business</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="skills" class="section">
+
+```
+<div class="section-title">
+    Expertise
+</div>
+
+<div class="skills-grid">
+
+    <div class="skill-card">Digital Banking</div>
+    <div class="skill-card">Mobile Banking</div>
+    <div class="skill-card">Payments</div>
+    <div class="skill-card">Product Strategy</div>
+    <div class="skill-card">Product Analytics</div>
+    <div class="skill-card">Customer Experience</div>
+    <div class="skill-card">Growth</div>
+    <div class="skill-card">Process Automation</div>
+
+</div>
+```
+
+</section>
+
+<section class="section stats">
+
+```
+<div class="stat-card">
+    <span class="counter" data-target="5">0</span>+
+    <p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+    <span class="counter" data-target="10">0</span>+
+    <p>Major Products</p>
+</div>
+
+<div class="stat-card">
+    <span class="counter" data-target="100">0</span>+
+    <p>Product Features</p>
+</div>
+```
+
+</section>
+
+<section class="section philosophy">
+
+```
+<div class="glass-card">
+
+    <h2>
+        Product Philosophy
+    </h2>
+
+    <blockquote>
+
+        Great products are not built by features.
+
+        <br><br>
+
+        They are built by solving real user problems.
+
+    </blockquote>
+
+</div>
+```
+
+</section>
+
+<section id="contact" class="section">
+
+```
+<div class="section-title">
+    Contact
+</div>
+
+<div class="contact-card glass-card">
+
+    <p>
+        📧 demid.kuzmin1209@gmail.com
+    </p>
+
+    <p>
+        📱 +998 90 318 33 90
+    </p>
+
+    <p>
+        Telegram: @Demid_1209
+    </p>
+
+    <p>
+        LinkedIn:
+    </p>
+
+    <a
+        href="https://www.linkedin.com/in/демид-кузьмин-285078288/"
+        target="_blank">
+
+        View Profile
+
+    </a>
+
+</div>
+```
+
+</section>
+
+<footer>
+
+```
+<p>
+    © 2026 Demid Kuzmin
+</p>
+```
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
