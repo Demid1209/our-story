@@ -1800,4 +1800,56 @@ bottom:18px;
         transform:scale(4);
         opacity:0;
     }
+/* ===============================
+SCROLL PROGRESS
+===============================*/
+
+.scroll-progress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:3px;
+
+width:0;
+
+background:linear-gradient(
+90deg,
+var(--accent),
+var(--accent2)
+);
+
+z-index:999999;
+
+transition:.1s;
+
+}
+
+/* ===============================
+FLOATING CARDS
+===============================*/
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
 }
