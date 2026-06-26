@@ -1,369 +1,1101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Demid Kuzmin | Senior Product Lead</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description"
+content="Senior Product Lead specializing in Digital Banking, Fintech, Business Banking and Payment Solutions.">
 
-<style>
-/* =========================
-   BASE
-========================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter, sans-serif;
-}
+<meta property="og:title" content="Demid Kuzmin | Senior Product Lead">
+<meta property="og:description" content="Digital Banking • Fintech • Product Management">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photo.jpg">
 
-body{
-background:#070A12;
-color:white;
-overflow-x:hidden;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* =========================
-   BACKGROUND
-========================= */
-.bg{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 20%, rgba(124,92,255,.25), transparent 40%),
-radial-gradient(circle at 80% 30%, rgba(0,212,255,.15), transparent 40%),
-radial-gradient(circle at 50% 80%, rgba(124,92,255,.12), transparent 40%);
-z-index:-1;
-}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/* =========================
-   CURSOR
-========================= */
-.cursor{
-width:16px;
-height:16px;
-border:1px solid rgba(255,255,255,.6);
-border-radius:50%;
-position:fixed;
-transform:translate(-50%,-50%);
-pointer-events:none;
-z-index:999;
-}
+<link rel="stylesheet" href="style.css">
 
-/* =========================
-   HEADER
-========================= */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:20px 60px;
-backdrop-filter:blur(20px);
-background:rgba(10,12,20,.6);
-z-index:10;
-}
-
-nav a{
-color:#aaa;
-margin-left:20px;
-text-decoration:none;
-transition:.3s;
-}
-
-nav a:hover{
-color:white;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-flex-direction:column;
-}
-
-.avatar{
-width:120px;
-height:120px;
-border-radius:50%;
-margin-bottom:20px;
-object-fit:cover;
-box-shadow:0 0 40px rgba(124,92,255,.3);
-}
-
-h1{
-font-size:64px;
-}
-
-p{
-color:#aaa;
-max-width:700px;
-margin-top:10px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-.btn{
-margin-top:20px;
-padding:12px 20px;
-border-radius:12px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-color:white;
-text-decoration:none;
-transition:.3s;
-display:inline-block;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-border-color:#7c5cff;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-.section{
-padding:120px 10%;
-}
-
-h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-/* =========================
-   GLASS CARD
-========================= */
-.glass{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-padding:25px;
-border-radius:18px;
-backdrop-filter:blur(10px);
-}
-
-/* =========================
-   GRID
-========================= */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-/* =========================
-   CARD
-========================= */
-.card{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-padding:25px;
-border-radius:18px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#7c5cff;
-}
-
-/* =========================
-   TIMELINE
-========================= */
-.timeline div{
-margin-bottom:10px;
-color:#aaa;
-}
-
-.timeline span{
-color:#7c5cff;
-margin-right:10px;
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-text-align:center;
-padding:60px;
-color:#666;
-}
-</style>
 </head>
 
 <body>
 
-<div class="bg"></div>
-<div class="cursor"></div>
+<div class="cursor-glow"></div>
 
-<header>
-    <div><b>DK</b></div>
+<div class="background-glow glow-1"></div>
+<div class="background-glow glow-2"></div>
+<div class="background-glow glow-3"></div>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#cases">Cases</a>
-        <a href="#timeline">Journey</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<header class="header">
+
+<div class="logo">
+DK
+</div>
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#experience">Experience</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#timeline">Career</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="header-actions">
+
+<button id="langToggle" class="lang-btn">
+RU
+</button>
+
+<a href="cv.pdf" download class="download-btn">
+Download CV
+</a>
+
+</div>
+
 </header>
 
-<!-- HERO -->
-<section class="hero reveal">
+<section class="hero">
 
-    <img src="photo.jpg" class="avatar" />
+<div class="hero-left">
 
-    <h1>Demid Kuzmin</h1>
+<div class="hero-badge">
+
+Senior Product Lead
+
+</div>
+
+<h1>
+
+Building Digital Banking
+Products that create
+real business value.
+
+</h1>
+
+<p>
+
+Product Leader with 5+ years of experience
+building Digital Banking, Business Banking,
+Payments, Lending and Fintech products.
+
+Responsible for product strategy,
+customer experience,
+roadmaps and digital transformation.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn-primary">
+
+View Projects
+
+</a>
+
+<a href="#contact" class="btn-secondary">
+
+Contact Me
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h2>5+</h2>
+
+<span>Years</span>
+
+</div>
+
+<div>
+
+<h2>10+</h2>
+
+<span>Products</span>
+
+</div>
+
+<div>
+
+<h2>50+</h2>
+
+<span>Features</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="photo-wrapper">
+
+<img src="photo.jpg" alt="Demid Kuzmin">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<div class="section-header">
+
+<span>
+
+ABOUT
+
+</span>
+
+<h2>
+
+Who I Am
+
+</h2>
+
+</div>
+
+<div class="about-grid">
+
+<div class="glass-card">
+
+<h3>
+
+Senior Product Lead
+
+</h3>
+
+<p>
+
+Currently leading Digital Banking initiatives
+at Davr Bank with responsibility for
+Business Banking, Payment Gateway,
+Soft Collection,
+Hard Collection and product strategy.
+
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>
+
+Mission
+
+</h3>
+
+<p>
+
+Create digital financial products
+that solve real customer problems,
+increase business efficiency
+and generate measurable growth.
+
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>
+
+Education
+
+</h3>
+
+<p>
+
+National University of Science
+and Technology MISIS
+
+Moscow
+
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>
+
+Languages
+
+</h3>
+
+<ul>
+
+<li>🇷🇺 Russian</li>
+
+<li>🇬🇧 English</li>
+
+<li>🇺🇿 Uzbek</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="section">
+
+<div class="section-header">
+
+<span>
+
+CURRENT POSITION
+
+</span>
+
+<h2>
+
+Davr Bank
+
+</h2>
+
+</div>
+
+<div class="experience-card">
+
+<div>
+
+<h3>
+
+Senior Product Lead
+
+</h3>
+
+<p>
+
+Leading product development across Digital Banking,
+Business Banking and Payment Infrastructure.
+
+Responsible for roadmap planning,
+customer research,
+business requirements,
+UX improvements
+and delivery management.
+
+</p>
+
+</div>
+
+<div class="experience-tags">
+
+<span>Digital Banking</span>
+
+<span>Business Banking</span>
+
+<span>Gateway</span>
+
+<span>Soft Collection</span>
+
+<span>Hard Collection</span>
+
+<span>Payments</span>
+
+<span>Product Strategy</span>
+
+<span>Customer Experience</span>
+
+</div>
+
+</div>
+
+<section id="projects" class="section">
+
+<div class="section-header">
+
+<span>
+
+PRODUCTS
+
+</span>
+
+<h2>
+
+Featured Projects
+
+</h2>
+
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<h3>
+
+Davr Business 2.0
+
+</h3>
+
+<p>
+
+Complete digital platform
+for business customers.
+
+</p>
+
+<ul>
+
+<li>Online Account Opening</li>
+
+<li>Online Lending</li>
+
+<li>1C Integration</li>
+
+<li>Didox Integration</li>
+
+<li>Payroll</li>
+
+<li>Cash Register</li>
+
+<li>Terminal Requests</li>
+
+</ul>
+
+</div>
+
+<div class="project-card">
+
+<h3>
+
+Payment Gateway
+
+</h3>
+
+<p>
+
+Unified payment platform
+for digital services.
+
+</p>
+
+<ul>
+
+<li>Payment Routing</li>
+
+<li>Merchant Services</li>
+
+<li>API Integration</li>
+
+<li>Monitoring</li>
+
+</ul>
+
+</div>
+<div class="project-card">
+
+    <h3>
+        Soft Collection
+    </h3>
 
     <p>
-        Senior Product Lead — Digital Banking, Payments & Fintech Products.
+        Automated debt collection and customer communication platform.
     </p>
 
-    <a href="cv.pdf" class="btn">Download CV</a>
+    <ul>
+
+        <li>Reminder Automation</li>
+
+        <li>SMS & Push Notifications</li>
+
+        <li>Call Center Integration</li>
+
+        <li>Collection Analytics</li>
+
+    </ul>
+
+</div>
+
+<div class="project-card">
+
+    <h3>
+        Hard Collection
+    </h3>
+
+    <p>
+        Legal and recovery workflow management system.
+    </p>
+
+    <ul>
+
+        <li>Case Management</li>
+
+        <li>Legal Workflow</li>
+
+        <li>Recovery Analytics</li>
+
+        <li>Reporting Dashboard</li>
+
+    </ul>
+
+</div>
+
+<div class="project-card">
+
+    <h3>
+        Tenge Business
+    </h3>
+
+    <p>
+        Launch of digital banking services for SMEs.
+    </p>
+
+    <ul>
+
+        <li>Online Account Opening</li>
+
+        <li>Online SME Lending</li>
+
+        <li>Customer Onboarding</li>
+
+        <li>Digital Verification</li>
+
+    </ul>
+
+</div>
+
+<div class="project-card">
+
+    <h3>
+        Uzum Ecosystem
+    </h3>
+
+    <p>
+        Participation in fintech and marketplace ecosystem development.
+    </p>
+
+    <ul>
+
+        <li>Uzum Bank</li>
+
+        <li>Uzum Market</li>
+
+        <li>Uzum Nasiya</li>
+
+        <li>Uzum Tezkor</li>
+
+    </ul>
+
+</div>
+
+<div class="project-card">
+
+    <h3>
+        Click Business
+    </h3>
+
+    <p>
+        Business payment products and merchant solutions.
+    </p>
+
+    <ul>
+
+        <li>Merchant Products</li>
+
+        <li>Business Payments</li>
+
+        <li>Corporate Services</li>
+
+        <li>Digital Finance</li>
+
+    </ul>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section reveal">
+<section class="section">
 
-    <h2>About</h2>
+<div class="section-header">
 
-    <div class="glass">
-        Senior Product Lead with 5+ years of experience in digital banking,
-        fintech ecosystems, lending platforms and payment systems.
+<span>
+
+CASE STUDIES
+
+</span>
+
+<h2>
+
+Selected Product Cases
+
+</h2>
+
+</div>
+
+<div class="case-grid">
+
+<div class="case-card">
+
+<h3>
+
+Davr Business 2.0
+
+</h3>
+
+<div class="case-item">
+
+<strong>Challenge</strong>
+
+<p>
+
+Business customers needed a fully digital experience without visiting the branch.
+
+</p>
+
+</div>
+
+<div class="case-item">
+
+<strong>Solution</strong>
+
+<p>
+
+Designed a platform with online onboarding, digital lending,
+1C integration, Didox integration and self-service tools.
+
+</p>
+
+</div>
+
+<div class="case-item">
+
+<strong>Impact</strong>
+
+<p>
+
+Reduced operational workload and significantly improved customer experience.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="case-card">
+
+<h3>
+
+Tenge Business
+
+</h3>
+
+<div class="case-item">
+
+<strong>Challenge</strong>
+
+<p>
+
+Entrepreneurs faced lengthy account opening and lending processes.
+
+</p>
+
+</div>
+
+<div class="case-item">
+
+<strong>Solution</strong>
+
+<p>
+
+Implemented fully online account opening and digital lending.
+
+</p>
+
+</div>
+
+<div class="case-item">
+
+<strong>Impact</strong>
+
+<p>
+
+Faster onboarding and improved conversion.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline" class="section">
+
+<div class="section-header">
+
+<span>
+
+CAREER
+
+</span>
+
+<h2>
+
+Career Journey
+
+</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+
+2021
+
+</div>
+
+<div class="timeline-content">
+
+<h3>
+
+Tenge Business
+
+</h3>
+
+<p>
+
+Launch of Online Account Opening and Online Lending for SMEs.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+
+2022
+
+</div>
+
+<div class="timeline-content">
+
+<h3>
+
+Uzum Ecosystem
+
+</h3>
+
+<p>
+
+Development of fintech products and marketplace services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+
+2023
+
+</div>
+
+<div class="timeline-content">
+
+<h3>
+
+Click Business
+
+</h3>
+
+<p>
+
+Business payment products and digital financial services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+
+2024
+
+</div>
+
+<div class="timeline-content">
+
+<h3>
+
+Davr Bank
+
+</h3>
+
+<p>
+
+Product Owner leading Digital Banking and Business Banking initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+
+2025–Present
+
+</div>
+
+<div class="timeline-content">
+
+<h3>
+
+Senior Product Lead
+
+</h3>
+
+<p>
+
+Leading strategic banking products, payment infrastructure,
+collections and digital transformation.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="skills" class="section">
+
+    <div class="section-header">
+
+        <span>
+            EXPERTISE
+        </span>
+
+        <h2>
+            Core Competencies
+        </h2>
+
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">Digital Banking</div>
+
+        <div class="skill-card">Business Banking</div>
+
+        <div class="skill-card">Payments</div>
+
+        <div class="skill-card">Payment Gateway</div>
+
+        <div class="skill-card">Product Strategy</div>
+
+        <div class="skill-card">Product Discovery</div>
+
+        <div class="skill-card">Roadmap Planning</div>
+
+        <div class="skill-card">Customer Experience</div>
+
+        <div class="skill-card">Product Analytics</div>
+
+        <div class="skill-card">Leadership</div>
+
+        <div class="skill-card">Growth</div>
+
+        <div class="skill-card">Fintech</div>
+
     </div>
 
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="section reveal">
+<section class="section stats-section">
 
-    <h2>Products</h2>
+    <div class="section-header">
 
-    <div class="grid">
+        <span>
+            NUMBERS
+        </span>
 
-        <div class="card">
-            <h3>Davr Business 2.0</h3>
-            <p>Digital banking platform for SMEs</p>
+        <h2>
+            Experience in Numbers
+        </h2>
+
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <span class="counter" data-target="5">0</span>
+
+            <h3>Years</h3>
+
+            <p>Product Management</p>
+
         </div>
 
-        <div class="card">
-            <h3>Tenge Business</h3>
-            <p>Online onboarding & lending system</p>
+        <div class="stat-card">
+
+            <span class="counter" data-target="10">0</span>
+
+            <h3>Products</h3>
+
+            <p>Successfully Delivered</p>
+
         </div>
 
-        <div class="card">
-            <h3>Payment Gateway</h3>
-            <p>Transfers, payouts, integrations</p>
+        <div class="stat-card">
+
+            <span class="counter" data-target="50">0</span>
+
+            <h3>Features</h3>
+
+            <p>Launched to Production</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <span class="counter" data-target="7">0</span>
+
+            <h3>Fintech Projects</h3>
+
+            <p>Banking Ecosystems</p>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- CASES -->
-<section id="cases" class="section reveal">
+<section class="section philosophy">
 
-    <h2>Case Studies</h2>
+    <div class="glass-card philosophy-card">
 
-    <div class="grid">
+        <h2>
+            Product Philosophy
+        </h2>
 
-        <div class="card">
-            <h3>Davr Transformation</h3>
-            <p>Full digital banking rebuild for business clients</p>
-        </div>
+        <blockquote>
 
-        <div class="card">
-            <h3>Tenge Ecosystem</h3>
-            <p>SME onboarding + credit pipeline automation</p>
-        </div>
+            Great products are not built by adding more features.
+
+            <br><br>
+
+            They are built by solving real customer problems,
+            creating measurable business value
+            and continuously improving the customer experience.
+
+        </blockquote>
 
     </div>
 
 </section>
 
-<!-- TIMELINE -->
-<section id="timeline" class="section reveal">
+<section id="contact" class="section">
 
-    <h2>Career Journey</h2>
+    <div class="section-header">
 
-    <div class="timeline">
-        <div><span>2021</span> Tenge Business</div>
-        <div><span>2022</span> Uzum Ecosystem</div>
-        <div><span>2023</span> Click Business</div>
-        <div><span>2024</span> Davr Bank</div>
+        <span>
+
+            CONTACT
+
+        </span>
+
+        <h2>
+
+            Let's Connect
+
+        </h2>
+
+    </div>
+
+    <div class="contact-grid">
+
+        <a href="mailto:demid.kuzmin1209@gmail.com" class="contact-card">
+
+            <h3>Email</h3>
+
+            <p>
+                demid.kuzmin1209@gmail.com
+            </p>
+
+        </a>
+
+        <a href="https://t.me/Demid_1209"
+           target="_blank"
+           class="contact-card">
+
+            <h3>Telegram</h3>
+
+            <p>
+
+                @Demid_1209
+
+            </p>
+
+        </a>
+
+        <a href="https://www.linkedin.com/in/демид-кузьмин-285078288/"
+           target="_blank"
+           class="contact-card">
+
+            <h3>LinkedIn</h3>
+
+            <p>
+
+                View Profile
+
+            </p>
+
+        </a>
+
+        <a href="cv.pdf"
+           download
+           class="contact-card">
+
+            <h3>Download CV</h3>
+
+            <p>
+
+                PDF Resume
+
+            </p>
+
+        </a>
+
     </div>
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section reveal">
+<section class="section cta-section">
 
-    <h2>Contact</h2>
+    <div class="glass-card cta-card">
 
-    <div class="glass">
-        <p>Email: demid.kuzmin1209@gmail.com</p>
-        <p>Telegram: @Demid_1209</p>
-        <p>LinkedIn: profile</p>
-        <p>CV: available above</p>
+        <h2>
+
+            Interested in working together?
+
+        </h2>
+
+        <p>
+
+            I'm always open to discussing new product ideas,
+            digital banking transformation,
+            fintech innovation
+            and leadership opportunities.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="mailto:demid.kuzmin1209@gmail.com"
+               class="btn-primary">
+
+                Contact Me
+
+            </a>
+
+            <a href="cv.pdf"
+               download
+               class="btn-secondary">
+
+                Download CV
+
+            </a>
+
+        </div>
+
     </div>
 
 </section>
 
 <footer>
-    © 2026 Demid Kuzmin — Senior Product Lead
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+
+                Demid Kuzmin
+
+            </h3>
+
+            <p>
+
+                Senior Product Lead
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+
+                Digital Banking • Fintech • Payments
+
+            </p>
+
+        </div>
+
+        <div>
+
+            © 2026 Demid Kuzmin
+
+        </div>
+
+    </div>
+
 </footer>
 
-<script>
-/* =========================
-   CURSOR
-========================= */
-const cursor = document.querySelector('.cursor');
+<button id="backToTop">
 
-document.addEventListener('mousemove', e=>{
-cursor.style.left = e.clientX + 'px';
-cursor.style.top = e.clientY + 'px';
-});
+↑
 
-/* =========================
-   REVEAL
-========================= */
-const items = document.querySelectorAll('.reveal');
+</button>
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add('active');
-}
-});
-},{threshold:0.15});
-
-items.forEach(el=>observer.observe(el));
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
