@@ -1780,9 +1780,24 @@ right:18px;
 bottom:18px;
 
 }
-
+.btn-primary,
+.btn-secondary{
+    position:relative;
+    overflow:hidden;
 }
 
-/* =====================================================
-THE END
-======================================================*/
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+    transform:scale(0);
+    animation:rippleEffect .6s linear;
+    pointer-events:none;
+}
+
+@keyframes rippleEffect{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
