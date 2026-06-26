@@ -373,4 +373,162 @@ document.addEventListener("DOMContentLoaded", () => {
 
             },600);
 
+        }    /* ==========================================
+       ANIMATED COUNTERS
+    ========================================== */
+
+    const counters = document.querySelectorAll(".counter");
+
+    const counterObserver = new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(!entry.isIntersecting) return;
+
+            const counter = entry.target;
+
+            const target = Number(counter.dataset.target);
+
+            let current = 0;
+
+            const step = Math.max(1, Math.ceil(target / 80));
+
+            const update = ()=>{
+
+                current += step;
+
+                if(current >= target){
+
+                    counter.textContent = target;
+
+                    return;
+
+                }
+
+                counter.textContent = current;
+
+                requestAnimationFrame(update);
+
+            };
+
+            update();
+
+            counterObserver.unobserve(counter);
+
         });
+
+    },{
+
+        threshold:0.5
+
+    });
+
+    counters.forEach(counter=>{
+
+        counterObserver.observe(counter);
+
+    });
+
+    /* ==========================================
+       SCROLL PROGRESS BAR
+    ========================================== */
+
+    const progressBar = document.createElement("div");
+
+    progressBar.className = "scroll-progress";
+
+    document.body.appendChild(progressBar);
+
+    window.addEventListener("scroll",()=>{
+
+        const scroll = window.scrollY;
+
+        const height =
+
+        document.documentElement.scrollHeight -
+
+        window.innerHeight;
+
+        const percent = (scroll / height) * 100;
+
+        progressBar.style.width = percent + "%";
+
+    });
+
+    /* ==========================================
+       HERO TYPEWRITER
+    ========================================== */
+
+    const heroText = document.querySelector(".hero-tag");
+
+    if(heroText){
+
+        const words = [
+
+            "SENIOR PRODUCT LEAD",
+
+            "DIGITAL BANKING",
+
+            "BUSINESS BANKING",
+
+            "PAYMENT GATEWAY",
+
+            "FINTECH PRODUCTS"
+
+        ];
+
+        let word = 0;
+
+        setInterval(()=>{
+
+            heroText.style.opacity = 0;
+
+            setTimeout(()=>{
+
+                word++;
+
+                if(word >= words.length){
+
+                    word = 0;
+
+                }
+
+                heroText.textContent = words[word];
+
+                heroText.style.opacity = 1;
+
+            },250);
+
+        },2500);
+
+    }
+
+    /* ==========================================
+       IMAGE LAZY FADE
+    ========================================== */
+
+    document.querySelectorAll("img").forEach(img=>{
+
+        img.onload = ()=>{
+
+            img.style.opacity = 1;
+
+        };
+
+    });
+
+    /* ==========================================
+       RANDOM FLOAT ANIMATION
+    ========================================== */
+
+    document.querySelectorAll(
+
+        ".project-card,.case-card"
+
+    ).forEach((card,index)=>{
+
+        card.style.animation =
+
+        `floatCard ${5 + index % 3}s ease-in-out infinite`;
+
+    });
